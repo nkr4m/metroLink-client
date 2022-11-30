@@ -1,0 +1,14 @@
+nav:after {
+    content:"";
+    background: -webkit-linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    /* background: -webkit-linear-gradient(43deg, #4158D0 0%, #C850C0 40%, #FFCC70 100%); */
+    display: block;
+    height:2px;
+    width: 110%;
+    position: absolute;
+    bottom: 0;
+}
+
+
+
+
