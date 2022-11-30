@@ -81,14 +81,20 @@
             <br>
             <div style="color: rgb(163, 163, 163);" id="emailHelp" class="form-text">the search engine might not be
               accurate with the real world,
-              updated-2021</div>
+              updated-2022</div>
             <div style="color: rgb(163, 163, 163);" id="emailHelp" class="form-text"></div>
 
           </div>
         </div>
       </div>
       <div class="col-12 col-xs-1 col-sm-12 col-md-7">
-        
+        <div class="card border-0">
+          <div class="card-body" style="font-weight: 100;">
+            search result is based on the minimal stopages along the jouney from source to destination, 
+            the line-switch variable is not taken into consideration, the current algorithm works on providing atmost 3 most optimal paths, if exists. 
+            <code>station code</code> is a variable used for the purpose of dev, please ignore!
+          </div>
+        </div>
         <div class="container" *ngFor="let arr of deatilObj; let i = index">
           <div class="row">
             <div class="col-md-12">

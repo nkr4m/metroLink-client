@@ -11,8 +11,8 @@ export class SearchBoardService {
   localUrl = "http://localhost:8080/";
   prodUrl = "https://metrolink-service.herokuapp.com/";
 
-  // serverUrl = this.prodUrl;
-  serverUrl = this.localUrl;
+  serverUrl = this.prodUrl;
+  // serverUrl = this.localUrl;
 
 
   fetchFromSt(){

@@ -10,8 +10,8 @@ export class DetailedSearchService {
   localUrl = "http://localhost:8080/";
   prodUrl = "https://metrolink-service.herokuapp.com/";
 
-  // serverUrl = this.prodUrl;
-  serverUrl = this.localUrl;
+  serverUrl = this.prodUrl;
+  // serverUrl = this.localUrl;
 
   constructor(private http: HttpClient) { }
 
