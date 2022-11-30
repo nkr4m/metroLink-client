@@ -42,7 +42,7 @@
                   <select class="form-select" (change)="fromChange()" formControlName="fromStation"
                     aria-label="Default select example">
                     <option disabled="true" selected value="DEFAULT">select a station</option>
-                    <option *ngFor="let st of fromStArr" value="{{st.stationCode}}">{{st.stationCode}}</option>
+                    <option *ngFor="let st of fromStArr" value="{{st.stationCode}}">{{st.stationName}}</option>
                   </select>
                 </div>
 
@@ -50,7 +50,7 @@
                   <label for="exampleInputEmail1" class="form-label">To Station</label>
                   <select class="form-select" formControlName="toStation" aria-label="Default select example">
                     <option disabled="true" selected value="DEFAULT">select a station</option>
-                    <option *ngFor="let st of toStArr" value="{{st.stationCode}}">{{st.stationCode}}</option>
+                    <option *ngFor="let st of toStArr" value="{{st.stationCode}}">{{st.stationName}}</option>
 
                   </select>
                 </div>

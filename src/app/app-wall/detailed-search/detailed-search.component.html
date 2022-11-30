@@ -99,9 +99,12 @@
                     
                     <ul class="timeline">
                       <li class="event" *ngFor="let obj of arr">
-                        <span>Station Code: {{obj.stationCode }}
+                        <span style="font-size: 16px; font-weight: 500;">
+                          {{obj.stationName}}
                           <br>
-                          Station Name: N.A
+                        </span>
+                        <span style="font-size: 12px; font-weight: 100;">
+                          Station Code: {{obj.stationCode }}
                         </span>
                       </li>
                     </ul>

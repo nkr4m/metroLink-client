@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import {ActivatedRoute} from '@angular/router';
 import { Router } from '@angular/router';
+import { FetchSt } from 'src/app/model/fetchSt';
 
 import { DetailedSearchService } from './detailed-search.service';
 
@@ -17,6 +18,10 @@ export class DetailedSearchComponent implements OnInit {
   dtForm:FormGroup;
 
   deatilObj:any;
+
+  fetchSt:any;
+
+  
 
 
   constructor(private fb:FormBuilder,private route:ActivatedRoute, private router:Router, private service:DetailedSearchService) {
@@ -51,13 +56,27 @@ export class DetailedSearchComponent implements OnInit {
   }
 
   setDtForm(from, to){
-    console.log(from, to)
-    this.dtForm.controls['fromStation'].disable();
-    this.dtForm.controls['fromStation'].setValue(from);
+    this.service.fetchSt(from, to).subscribe(
+      (data)=>{
+        this.fetchSt = data;
+        this.dtForm.controls['fromStation'].disable();
+        this.dtForm.controls['fromStation'].setValue(this.fetchSt.from);
+        this.dtForm.controls['toStation'].disable();
+        this.dtForm.controls['toStation'].setValue(this.fetchSt.to);
+        // console.log(this.fetchSt.from)
+      },
+      (error)=>{
+
+      }
+    )
+
+    // console.log(from, to)
+    // this.dtForm.controls['fromStation'].disable();
+    // this.dtForm.controls['fromStation'].setValue(from);
 
 
-    this.dtForm.controls['toStation'].disable();
-    this.dtForm.controls['toStation'].setValue(to);
+    // this.dtForm.controls['toStation'].disable();
+    // this.dtForm.controls['toStation'].setValue(to);
     
     this.service.fetchDijkstraPath(from, to).subscribe(
       (data)=>{
